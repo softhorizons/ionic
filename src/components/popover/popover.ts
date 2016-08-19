@@ -86,10 +86,11 @@ export class Popover extends ViewController {
  * To dismiss the popover after creation, call the `dismiss()` method on the
  * `Popover` instance. The popover can also be dismissed from within the popover's
  * view by calling the `dismiss()` method on the [ViewController](../../nav/ViewController).
- * The `onDidDismiss` function can be called to perform an action after the popover
- * is dismissed. The popover will dismiss when the backdrop is clicked, but this
- * can be disabled by setting `enableBackdropDismiss` to `false` in the popover
- * options.
+ * The `onDidDismiss` method can be called to set up a callback that will called after the popover
+ * is dismissed. The `dismiss()` method accepts a single, optional parameter which will be passed as the 
+ * argument to any callback that was set up by `onDidDismiss()`. The popover will implicitly perform 
+ * `dismiss(null)` when the backdrop is clicked, but this can be disabled by setting `enableBackdropDismiss`
+ * to `false` in the popover options.
  *
  * > Note that after the component is dismissed, it will not be usable anymore and
  * another one must be created. This can be avoided by wrapping the creation and
